@@ -24,8 +24,15 @@
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/jasmine/device.mk)
 
-# Inherit from Havoc custom product configuration
-$(call inherit-product, vendor/havoc/config/common.mk)
+# Inherit Carbon GSM telephony parts
+$(call inherit-product, vendor/carbon/config/gsm.mk)
+
+# Inherit Carbon product configuration
+$(call inherit-product, vendor/carbon/config/common.mk)
+
+# CarbonRom Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carbon.maintainer="Rcstar6696"
 
 TARGET_VENDOR_PRODUCT_NAME := jasmine
 
@@ -37,7 +44,7 @@ BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:9/PKQ1.180904.001/V10.0.2.0.
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_PLATFORM := SDM660
-PRODUCT_NAME := havoc_jasmine
+PRODUCT_PLATFORM := SDM660l
+PRODUCT_NAME := carbon_jasmine
 PRODUCT_DEVICE := jasmine
-PRODUCT_MODEL := MI A2
+PRODUCT_MODEL := MI A2 (CarbonROM)
