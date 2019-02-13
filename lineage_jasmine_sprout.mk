@@ -21,26 +21,23 @@
 # definition file).
 #
 
-# Inherit device configuration
-$(call inherit-product, device/xiaomi/jasmine/device.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from Havoc custom product configuration
-$(call inherit-product, vendor/havoc/config/common.mk)
+# Inherit from jasmine device
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-TARGET_VENDOR_PRODUCT_NAME := jasmine
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.havoc.maintainer=rcstar6696
+PRODUCT_NAME := lineage_jasmine_sprout
+PRODUCT_BRAND := Xiaomi
+PRODUCT_DEVICE := jasmine_sprout
+PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_MODEL := Mi A2
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-	PRIVATE_BUILD_DESC="taimen-user 9 PQ1A.190105.004 5148680 release-keys"
+    TARGET_DEVICE="jasmine_sprout" \
+    PRODUCT_NAME="jasmine_sprout" \
+    PRIVATE_BUILD_DESC="jasmine-user 9 PKQ1.180904.001 V10.0.3.0.PDIMIXM release-keys"
 
-BUILD_FINGERPRINT := google/taimen/taimen:9/PQ1A.190105.004/5148680:user/release-keys
+BUILD_FINGERPRINT := "xiaomi/jasmine/jasmine_sprout:9/PKQ1.180904.001/V10.0.3.0.PDIMIXM:user/release-keys"
 
-# Device identifier
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_PLATFORM := SDM660
-PRODUCT_NAME := havoc_jasmine
-PRODUCT_DEVICE := jasmine
-PRODUCT_MODEL := MI A2
+TARGET_VENDOR_PRODUCT_NAME := jasmine_sprout
