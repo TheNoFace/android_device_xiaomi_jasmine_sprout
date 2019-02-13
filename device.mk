@@ -86,7 +86,7 @@ $(call inherit-product, $(DEVICE_PATH)/device_prop.mk)
 
 # Init
  PRODUCT_PACKAGES += \
- 	libinit_jasmine
+ 	libinit_jasmine_sprout
 
 # Media
 PRODUCT_COPY_FILES += \
